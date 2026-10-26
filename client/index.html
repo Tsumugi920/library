@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>library 图书管理</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">📚</span>
+      <div>
+        <h1>library 图书管理</h1>
+        <p class="subtitle">借出 · 归还 · 全文搜索 · 分类汇总</p>
+      </div>
+    </div>
+    <div id="stats" class="stats"></div>
+    <button id="addBtn" class="btn primary">＋ 添加图书</button>
+  </header>
+
+  <main class="container">
+    <section class="toolbar">
+      <input id="searchInput" class="search" type="search"
+             placeholder="全文搜索：书名 / 作者 / ISBN / 简介…" autocomplete="off" />
+      <select id="categorySelect">
+        <option value="">全部分类</option>
+      </select>
+    </section>
+
+    <section id="categoryChips" class="chips"></section>
+
+    <section id="bookGrid" class="grid"></section>
+    <p id="emptyState" class="empty hidden">📖 没有符合条件的图书，换个关键词或分类试试。</p>
+  </main>
+
+  <!-- 借出弹窗 -->
+  <div id="borrowModal" class="modal-mask hidden">
+    <div class="modal">
+      <h3>借出图书</h3>
+      <p id="borrowBookInfo" class="modal-subtitle"></p>
+      <label class="field">
+        <span>借阅人姓名</span>
+        <input id="borrowerInput" placeholder="例如：张三" autocomplete="off" />
+      </label>
+      <div class="modal-actions">
+        <button type="button" class="btn" data-close>取消</button>
+        <button id="borrowConfirmBtn" class="btn primary">确认借出</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 添加 / 编辑弹窗 -->
+  <div id="bookModal" class="modal-mask hidden">
+    <form id="bookForm" class="modal">
+      <h3 id="bookModalTitle">添加图书</h3>
+      <label class="field"><span>书名 *</span><input id="titleInput" placeholder="必填" autocomplete="off" /></label>
+      <div class="field-row">
+        <label class="field"><span>作者</span><input id="authorInput" placeholder="例如：余华" autocomplete="off" /></label>
+        <label class="field"><span>分类</span>
+          <input id="categoryInput" list="categoryList" placeholder="例如：科幻" autocomplete="off" />
+          <datalist id="categoryList"></datalist>
+        </label>
+      </div>
+      <div class="field-row">
+        <label class="field"><span>出版年份</span><input id="yearInput" type="number" min="0" placeholder="例如：2008" /></label>
+        <label class="field"><span>馆藏副本数</span><input id="copiesInput" type="number" min="1" value="1" /></label>
+      </div>
+      <label class="field"><span>ISBN</span><input id="isbnInput" placeholder="例如：9787536692930" autocomplete="off" /></label>
+      <label class="field"><span>简介</span><textarea id="descriptionInput" rows="3" placeholder="一句话介绍这本书"></textarea></label>
+      <div class="modal-actions">
+        <button type="button" class="btn" data-close>取消</button>
+        <button type="submit" class="btn primary">保存</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

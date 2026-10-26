@@ -1,0 +1,233 @@
+:root {
+  --bg: #f3f5fb;
+  --card: #ffffff;
+  --ink: #1f2430;
+  --muted: #7a8199;
+  --line: #e5e8f2;
+  --primary: #3b6cf5;
+  --primary-dark: #2f56cc;
+  --danger: #d94f4f;
+  --ok: #1f9d61;
+  --warn: #d98a1f;
+  --radius: 12px;
+  --shadow: 0 2px 10px rgba(31, 42, 80, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.hidden { display: none !important; }
+.muted { color: var(--muted); }
+
+/* ---------- 顶栏 ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 14px 24px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.brand { display: flex; align-items: center; gap: 12px; margin-right: auto; }
+.logo { font-size: 32px; }
+.brand h1 { margin: 0; font-size: 20px; }
+.subtitle { margin: 2px 0 0; font-size: 12px; color: var(--muted); }
+
+.stats { display: flex; gap: 14px; font-size: 13px; color: var(--muted); }
+.stats b { color: var(--ink); font-size: 15px; }
+
+/* ---------- 布局与工具栏 ---------- */
+.container { max-width: 1180px; margin: 0 auto; padding: 20px 24px 60px; }
+
+.toolbar { display: flex; gap: 12px; margin-bottom: 14px; }
+.search {
+  flex: 1;
+  padding: 11px 14px;
+  font-size: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  outline: none;
+}
+.search:focus, select:focus, .field input:focus, .field textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 108, 245, 0.15);
+}
+select {
+  padding: 11px 12px;
+  font-size: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--ink);
+  min-width: 140px;
+  outline: none;
+}
+
+/* ---------- 分类汇总条 ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.chip {
+  padding: 6px 12px;
+  font-size: 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.chip b { color: var(--ink); margin-left: 2px; }
+.chip:hover { border-color: var(--primary); color: var(--primary); }
+.chip.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+.chip.active b { color: #fff; }
+
+/* ---------- 图书卡片 ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.card-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+
+.badge { padding: 3px 10px; border-radius: 999px; font-size: 12px; color: #fff; }
+.badge.c0 { background: #5b7ff0; }
+.badge.c1 { background: #1f9d61; }
+.badge.c2 { background: #d98a1f; }
+.badge.c3 { background: #b05fd6; }
+.badge.c4 { background: #e0608a; }
+.badge.c5 { background: #21a9b4; }
+
+.avail { font-size: 12px; font-weight: 600; }
+.avail.ok { color: var(--ok); }
+.avail.low { color: var(--warn); }
+.avail.none { color: var(--danger); }
+
+.card .title { margin: 0; font-size: 16px; line-height: 1.4; }
+.card .meta { margin: 0; font-size: 13px; color: var(--muted); }
+.card .desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.loan {
+  padding: 6px 10px;
+  font-size: 12px;
+  color: #8a5a00;
+  background: #fdf3e0;
+  border-radius: 8px;
+}
+
+.card-actions { display: flex; gap: 8px; margin-top: auto; padding-top: 8px; }
+
+/* ---------- 按钮 ---------- */
+.btn {
+  padding: 9px 16px;
+  font-size: 14px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--card);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+.btn.primary:hover:not(:disabled) { background: var(--primary-dark); color: #fff; }
+.btn.danger { color: var(--danger); }
+.btn.danger:hover:not(:disabled) { border-color: var(--danger); color: var(--danger); }
+.btn.small { padding: 6px 12px; font-size: 13px; flex: 1; }
+
+/* ---------- 空状态 ---------- */
+.empty { text-align: center; padding: 60px 0; font-size: 15px; color: var(--muted); }
+
+/* ---------- 弹窗 ---------- */
+.modal-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(20, 26, 46, 0.45);
+}
+.modal {
+  width: 100%;
+  max-width: 460px;
+  max-height: 90vh;
+  overflow: auto;
+  padding: 22px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(15, 22, 50, 0.25);
+}
+.modal h3 { margin: 0 0 14px; font-size: 18px; }
+.modal-subtitle { margin: -6px 0 14px; font-size: 13px; color: var(--muted); }
+
+.field { display: block; margin-bottom: 12px; }
+.field span { display: block; margin-bottom: 5px; font-size: 13px; color: var(--muted); }
+.field input, .field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  outline: none;
+  resize: vertical;
+}
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px; }
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 34px;
+  z-index: 200;
+  transform: translateX(-50%);
+  padding: 11px 20px;
+  font-size: 14px;
+  color: #fff;
+  background: #2c3348;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(15, 22, 50, 0.3);
+}
+.toast.error { background: var(--danger); }
+
+@media (max-width: 640px) {
+  .toolbar { flex-direction: column; }
+  .field-row { grid-template-columns: 1fr; }
+  .stats { display: none; }
+}
