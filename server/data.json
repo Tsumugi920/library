@@ -1,0 +1,163 @@
+{
+  "nextBookId": 14,
+  "nextLoanId": 4,
+  "books": [
+    {
+      "id": 1,
+      "title": "三体",
+      "author": "刘慈欣",
+      "category": "科幻",
+      "year": 2008,
+      "isbn": "9787536692930",
+      "totalCopies": 3,
+      "description": "地球文明向宇宙发出的第一声啼鸣，一段跨越光年的文明兴衰史。",
+      "availableCopies": 3,
+      "loans": [
+        {
+          "id": 1,
+          "borrower": "张三",
+          "borrowedAt": "2026-10-25T09:21:42.518Z",
+          "returnedAt": "2026-10-25T09:21:42.564Z"
+        },
+        {
+          "id": 3,
+          "borrower": "王小明",
+          "borrowedAt": "2026-10-25T09:22:47.131Z",
+          "returnedAt": "2026-10-25T09:24:33.592Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "三体Ⅱ·黑暗森林",
+      "author": "刘慈欣",
+      "category": "科幻",
+      "year": 2008,
+      "isbn": "9787536693968",
+      "totalCopies": 2,
+      "description": "面壁计划开启，人类与三体文明进入漫长的黑暗森林对峙。",
+      "availableCopies": 2,
+      "loans": []
+    },
+    {
+      "id": 3,
+      "title": "活着",
+      "author": "余华",
+      "category": "文学",
+      "year": 1993,
+      "isbn": "9787506365437",
+      "totalCopies": 3,
+      "description": "福贵的一生，写尽了中国人在苦难中活下去的韧性。",
+      "availableCopies": 3,
+      "loans": []
+    },
+    {
+      "id": 4,
+      "title": "百年孤独",
+      "author": "加西亚·马尔克斯",
+      "category": "文学",
+      "year": 1967,
+      "isbn": "9787544253994",
+      "totalCopies": 2,
+      "description": "布恩迪亚家族七代人的传奇，魔幻现实主义巅峰之作。",
+      "availableCopies": 2,
+      "loans": []
+    },
+    {
+      "id": 5,
+      "title": "小王子",
+      "author": "圣埃克苏佩里",
+      "category": "文学",
+      "year": 1943,
+      "isbn": "9787020042494",
+      "totalCopies": 2,
+      "description": "写给大人的童话：真正重要的东西，眼睛是看不见的。",
+      "availableCopies": 2,
+      "loans": []
+    },
+    {
+      "id": 6,
+      "title": "人类简史：从动物到上帝",
+      "author": "尤瓦尔·赫拉利",
+      "category": "历史",
+      "year": 2012,
+      "isbn": "9787508647357",
+      "totalCopies": 2,
+      "description": "从认知革命到人工智能，一部宏观的人类发展史。",
+      "availableCopies": 2,
+      "loans": []
+    },
+    {
+      "id": 7,
+      "title": "明朝那些事儿（第1部）",
+      "author": "当年明月",
+      "category": "历史",
+      "year": 2006,
+      "isbn": "9787505722880",
+      "totalCopies": 1,
+      "description": "以通俗笔法重写大明王朝三百年兴衰。",
+      "availableCopies": 1,
+      "loans": []
+    },
+    {
+      "id": 8,
+      "title": "深入理解计算机系统（第3版）",
+      "author": "兰德尔·E. 布莱恩特",
+      "category": "科技",
+      "year": 2016,
+      "isbn": "9787111544937",
+      "totalCopies": 2,
+      "description": "从程序员视角剖析计算机系统的经典教材（CSAPP）。",
+      "availableCopies": 2,
+      "loans": []
+    },
+    {
+      "id": 9,
+      "title": "代码大全（第2版）",
+      "author": "史蒂夫·迈克康奈尔",
+      "category": "科技",
+      "year": 2006,
+      "isbn": "9787121022982",
+      "totalCopies": 1,
+      "description": "软件构建领域的百科全书，写好代码的案头必备。",
+      "availableCopies": 1,
+      "loans": []
+    },
+    {
+      "id": 10,
+      "title": "时间简史",
+      "author": "史蒂芬·霍金",
+      "category": "科技",
+      "year": 1988,
+      "isbn": "9787535732309",
+      "totalCopies": 2,
+      "description": "宇宙的起源、黑洞与时间箭头，最畅销的科普经典。",
+      "availableCopies": 2,
+      "loans": []
+    },
+    {
+      "id": 11,
+      "title": "原则",
+      "author": "瑞·达利欧",
+      "category": "经济",
+      "year": 2018,
+      "isbn": "9787508684031",
+      "totalCopies": 2,
+      "description": "桥水基金创始人总结的生活与工作原则。",
+      "availableCopies": 2,
+      "loans": []
+    },
+    {
+      "id": 12,
+      "title": "经济学原理（微观经济学分册）",
+      "author": "曼昆",
+      "category": "经济",
+      "year": 1998,
+      "isbn": "9787301114265",
+      "totalCopies": 2,
+      "description": "全球最流行的经济学入门教材，十大原理深入浅出。",
+      "availableCopies": 2,
+      "loans": []
+    }
+  ]
+}
